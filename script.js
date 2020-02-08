@@ -1,15 +1,20 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//Variables for use in function
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var symbols = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+var pwField = document.getElementById("password")
+var plength;
+var generatePassword;
+var pwCharSet;
+
 // Write password to the #password input
 function writePassword() {
-  var lowercase = "abcdefghijklmnopqrstuvwxyz";
-  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var numbers = "0123456789";
-  var symbols = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
-  var plength;
-  var generatePassword = "";
-  var pwCharSet = "";
+  writePassword = "";
+  pwCharSet = "";
   //Write the prompt for the password length
   var plength = prompt ("What length of password do you want? Must be a number between 8 and 128");
   //give alerts for lengths that are too long or too short
@@ -40,15 +45,12 @@ function writePassword() {
     if (symbols == true) {
       pwCharSet += lowercase;
     }
-  for (let i = 8; i < plength; i++) {
+  for (let i = 8; i <= plength; i++) {
         generatePassword += pwCharSet.charAt(Math.floor(Math.random() * pwCharSet.length));
       }
 
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+  pwField.innerHTML = generatePassword
+  
 }
 
 // Add event listener to generate button
