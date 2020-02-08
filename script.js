@@ -1,20 +1,19 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//Variables for use in function
+
+
+// Write password to the #password input
+function writePassword() {
+  //Variables for use in function
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var symbols = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 var pwField = document.getElementById("password")
 var plength;
-var generatePassword;
-var pwCharSet;
-
-// Write password to the #password input
-function writePassword() {
-  writePassword = "";
-  pwCharSet = "";
+var pwCharSet = "";
+var generatePassword = "";
   //Write the prompt for the password length
   var plength = prompt ("What length of password do you want? Must be a number between 8 and 128");
   //give alerts for lengths that are too long or too short
@@ -27,25 +26,26 @@ function writePassword() {
     }
 
   //Write the confirms for the four variables
-  var lowercase = confirm("Do you wish to use Lowercase letters in your password?");
+  var lcase = confirm("Do you wish to use Lowercase letters in your password?");
   //Write what to do with the variable if true value is returned
-    if (lowercase == true) {
+    if (lcase == true) {
       pwCharSet += lowercase;
     }
 
-  var uppercase = confirm("Do you wish to use Uppercase letters in your password?");
-    if (uppercase == true) {
-      pwCharSet += lowercase;
+  var ucase = confirm("Do you wish to use Uppercase letters in your password?");
+    if (ucase == true) {
+      pwCharSet += uppercase;
     }
-  var numbers = confirm("Do you wish to use Numbers in your password?");
-    if (numbers == true) {
-      pwCharSet += lowercase;
+  var nmbrs = confirm("Do you wish to use Numbers in your password?");
+    if (nmbrs == true) {
+      pwCharSet += numbers;
     }
-  var symbols = confirm("Do you wish to use Symbols in your password?");
-    if (symbols == true) {
-      pwCharSet += lowercase;
+  var special = confirm("Do you wish to use Symbols in your password?");
+    if (special == true) {
+      pwCharSet += symbols;
     }
-  for (let i = 8; i <= plength; i++) {
+    console.log(pwCharSet)
+  for (let i = 0; i < plength; i++) {
         generatePassword += pwCharSet.charAt(Math.floor(Math.random() * pwCharSet.length));
       }
 
