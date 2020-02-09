@@ -4,6 +4,8 @@
 
 This project is to create a random password generator, using input from a user. This application runs on a browser with dynamically updating HTML and CSS run by Javascript. 
 
+This password generator is meant for those that want a strong password for sensitive data protection. 
+
 
 ## Table of Contents
 
@@ -26,7 +28,9 @@ To use this application, firstly load the HTML page on a browser of your choice.
 
 ## Credits
 
-Javascript by Arthur Freeman
+Main Contributor: Arthur Freeman
+
+Tutorial used: [https://webdevtrick.com/javascript-random-password-generator/](https://webdevtrick.com/javascript-random-password-generator/) 
 
 
 
