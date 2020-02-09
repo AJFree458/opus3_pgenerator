@@ -6,23 +6,25 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   //Variables for use in function
-var lowercase = "abcdefghijklmnopqrstuvwxyz";
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numbers = "0123456789";
-var symbols = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
-var pwField = document.getElementById("password")
-var plength;
-var pwCharSet = "";
-var generatePassword = "";
+  var lowercase = "abcdefghijklmnopqrstuvwxyz";
+  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numbers = "0123456789";
+  var symbols = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+  var pwField = document.getElementById("password")
+  var plength;
+  var pwCharSet = "";
+  var generatePassword = "";
   //Write the prompt for the password length
   var plength = prompt ("What length of password do you want? Must be a number between 8 and 128");
   //give alerts for lengths that are too long or too short
     if(plength < 8) {
       alert("Please select a number between 8 and 128!");
+      return;
     }
 
     if(plength > 128) {
-      alert("Please select a nuber between 8 and 128!")
+      alert("Please select a nuber between 8 and 128!");
+      return;
     }
 
   //Write the confirms for the four variables
