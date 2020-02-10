@@ -11,7 +11,7 @@ function writePassword() {
   var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numbers = "0123456789";
   var symbols = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
-  var pwField = document.getElementById("password")
+  var pwField = document.getElementById("password");
   var plength;
   var pwCharSet = "";
   var generatePassword = "";
@@ -53,12 +53,12 @@ function writePassword() {
       pwCharSet += symbols;
     }
 
-    console.log(pwCharSet)
+   // console.log(pwCharSet)
   for (let i = 0; i < plength; i++) {
         generatePassword += pwCharSet.charAt(Math.floor(Math.random() * pwCharSet.length));
       }
 
-  pwField.innerHTML = generatePassword
+  pwField.innerHTML = generatePassword;
   
 }
 
