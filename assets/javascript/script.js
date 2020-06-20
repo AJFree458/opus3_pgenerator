@@ -1,23 +1,22 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var symbols = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+var pwField = document.getElementById("password");
 
 // Write password
 function writePassword() {
   
   //Variables for use in function
-  var lowercase = "abcdefghijklmnopqrstuvwxyz";
-  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var numbers = "0123456789";
-  var symbols = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
-  var pwField = document.getElementById("password");
   var plength;
   var pwCharSet = "";
   var generatePassword = "";
 
   //Write the prompt for the password length
-  var plength = prompt ("What length of password do you want? Must be a number between 8 and 128");
+  var plength = prompt("What length of password do you want? Must be a number between 8 and 128");
 
   //give alerts for lengths that are too long or too short
     if(plength < 8) {
@@ -26,7 +25,7 @@ function writePassword() {
     }
 
     if(plength > 128) {
-      alert("Please select a nuber between 8 and 128!");
+      alert("Please select a number between 8 and 128!");
       return;
     }
 
@@ -54,7 +53,7 @@ function writePassword() {
     }
 
    // console.log(pwCharSet)
-  for (let i = 0; i < plength; i++) {
+  for (var i = 0; i < plength; i++) {
         generatePassword += pwCharSet.charAt(Math.floor(Math.random() * pwCharSet.length));
       }
 
